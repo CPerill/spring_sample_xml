@@ -15,11 +15,16 @@ public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 		List<Customer> customers = new ArrayList<>();
 
 		Customer customer = new Customer();
+		Customer customer2 = new Customer();
 
 		customer.setFirstName("Connor");
 		customer.setLastName("Perill");
 
 		customers.add(customer);
+		
+		customer2.setFirstName("Connor");
+		customer2.setLastName("Perill");
+		customers.add(customer2);
 		
 		return customers;
 	}

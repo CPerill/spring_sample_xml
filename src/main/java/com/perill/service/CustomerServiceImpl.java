@@ -4,19 +4,26 @@ import java.util.List;
 
 import com.perill.model.Customer;
 import com.perill.repository.CustomerRepository;
-import com.perill.repository.HibernateCustomerRepositoryImpl;
 
-public class CustomerServiceImpl implements CustomerService {
+public class CustomerServiceImpl implements customerService {
+
+	private CustomerRepository customerRepository;
+
+	public CustomerServiceImpl() {
+		
+	}
 	
-	//hard coded variables
-	private CustomerRepository customerRepository = new HibernateCustomerRepositoryImpl();
-	
-	/* (non-Javadoc)
-	 * @see com.perill.service.CustomerService#findAll()
-	 */
+	public CustomerServiceImpl(CustomerRepository customerRepository) {
+		this.customerRepository = customerRepository;
+	}
+
 	@Override
 	public List<Customer> findAll() {
 		return customerRepository.findAll();
+	}
+
+	public void setCustomerRepository(CustomerRepository customerRepository) {
+		this.customerRepository = customerRepository;
 	}
 
 }
