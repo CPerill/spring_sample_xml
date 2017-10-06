@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.perill.model.Customer;
 
-public interface CustomerService {
+public interface customerService {
 
 	List<Customer> findAll();
 
